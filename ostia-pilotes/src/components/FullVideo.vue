@@ -1,6 +1,6 @@
 <template>
     <div>
-        <video autoplay loop id="ostiaPilotesVideo">
+        <video controls autoplay loop muted id="ostiaPilotesVideo">
             <source src="@/assets/videos/5O8d_S9yqgtXWL03.mp4" type="video/mp4">
         </video>
     </div>
