@@ -17,6 +17,7 @@ steps:
 
 - script: |
     cd ostia-pilotes
+    yarn install
     yarn build
   displayName: 'yarn build'
 
