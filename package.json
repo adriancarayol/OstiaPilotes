@@ -1,0 +1,8 @@
+{
+  "name": "OstiaPilotes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:adriancarayol/OstiaPilotes.git",
+  "author": "Adrian Carayol Orenes <adrian.carayol@vozelia.com>",
+  "license": "MIT"
+}
