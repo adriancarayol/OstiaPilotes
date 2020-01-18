@@ -1,0 +1,31 @@
+# Node.js with Vue
+# Build a Node.js project that uses Vue.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: build
+  displayName: Install & Build
+  jobs:
+  - job: install_node
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '10.x'
+        displayName: 'Install Node.js'
+      - script: |
+          npm install
+          npm run build
+          displayName: 'npm install and build'
+  - job: deploy
+    pool:
+      vmImage: 'atlassian/pipelines-awscli'
+    steps:
+      - script: |
+        aws s3 sync --acl public-read --delete ./dist s3://$S3_BUCKET_NAME
