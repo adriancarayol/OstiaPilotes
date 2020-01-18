@@ -27,5 +27,4 @@ stages:
     pool:
       vmImage: 'atlassian/pipelines-awscli'
     steps:
-      - script: |
-        aws s3 sync --acl public-read --delete ./dist s3://$S3_BUCKET_NAME
+      - script: aws s3 sync --acl public-read --delete ./dist s3://$S3_BUCKET_NAME
